@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mein interaktives Portfolio</title>
+    <!-- CSS Datei verlinken -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Fireworks.js von CDN laden -->
+    <script src="https://cdn.jsdelivr.net/npm/fireworks-js"></script>
+</head>
+<body>
+
+    <!-- Header -->
+    <header>
+        <h1>Willkommen zu meinem interaktiven Portfolio!</h1>
+    </header>
+
+    <!-- Hauptcontainer im Holy Grail Layout -->
+    <div class="container">
+        <!-- Linke Sidebar -->
+        <aside class="sidebar">
+            <h2>Über mich</h2>
+            <p>Hier sind einige Informationen über mich.</p>
+        </aside>
+
+        <!-- Hauptinhalt -->
+        <main class="main">
+            <div id="question">Hier wird die Frage angezeigt.</div>
+            <div id="answers"></div>
+        </main>
+
+        <!-- Rechte Sidebar -->
+        <aside class="sidebar">
+            <h2>Kontakt</h2>
+            <p>Hier sind meine Kontaktdaten.</p>
+        </aside>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Mein Portfolio</p>
+    </footer>
+
+    <!-- Overlay für das Endergebnis -->
+    <div id="overlay" class="overlay hidden">
+        <div class="overlay-content">
+            <h2>Ergebnisse</h2>
+            <p id="result-message"></p>
+            <button id="close-overlay">Schließen</button>
+        </div>
+    </div>
+
+    <!-- JavaScript Datei einbinden -->
+    <script src="script.js"></script>
+</body>
+</html>
