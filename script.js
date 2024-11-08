@@ -1,3 +1,19 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const headerText = "Willkommen zu meinem interaktiven Portfolio!";
+    const headerElement = document.querySelector("header h1");
+    let index = 0;
+
+    function typeWriter() {
+        if (index < headerText.length) {
+            headerElement.textContent += headerText.charAt(index);
+            index++;
+            setTimeout(typeWriter, 100);
+        }
+    }
+
+    typeWriter();
+});
+
 (() => {
     const questions = [
         {
@@ -85,10 +101,6 @@
 
         resultMessage.innerText = resultText;
         overlay.classList.remove("hidden");
-
-        if (percentage >= 70) {
-            showFireworks();
-        }
     }
 
     // Funktion zum Schließen des Overlays
@@ -103,27 +115,6 @@
         correctAnswersCount = 0;
         correctAnswersList = [];
         loadQuestion();
-    }
-
-    // Funktion, um ein Feuerwerk anzuzeigen
-    function showFireworks() {
-        const fireworksContainer = document.createElement("div");
-        fireworksContainer.id = "fireworks";
-        document.body.appendChild(fireworksContainer);
-
-        // Feuerwerk starten mit fireworks.js
-        const fireworks = new Fireworks(fireworksContainer, {
-            speed: 2,
-            particles: 150,
-            explosion: 4
-        });
-        fireworks.start();
-
-        // Feuerwerk nach 5 Sekunden beenden und das Element entfernen
-        setTimeout(() => {
-            fireworks.stop();
-            document.body.removeChild(fireworksContainer);
-        }, 5000);
     }
 
     loadQuestion();
