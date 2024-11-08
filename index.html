@@ -3,54 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mein interaktives Portfolio</title>
-    <!-- CSS Datei verlinken -->
+    <title>Daniel Jacobs - Portfolio</title>
     <link rel="stylesheet" href="styles.css">
-    <!-- Fireworks.js von CDN laden -->
-    <script src="https://cdn.jsdelivr.net/npm/fireworks-js"></script>
 </head>
 <body>
 
-    <header>
-        <h1 id="header-title"></h1> <!-- Startet leer, wird durch JS gefüllt -->
-    </header>
+    <!-- Header-Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#">About me</a></li>
+            <li><a href="#">Skills</a></li>
+            <li><a href="#">Portfolio</a></li>
+            <li><a href="#" class="contact-button">Contact Me</a></li>
+        </ul>
+    </nav>
 
-    <!-- Hauptcontainer im Holy Grail Layout -->
-    <div class="container">
-        <!-- Linke Sidebar -->
-        <aside class="sidebar">
-            <h2>Über mich</h2>
-            <p>Hier sind einige Informationen über mich.</p>
-        </aside>
-
-        <!-- Hauptinhalt -->
-        <main class="main">
-            <div id="question">Hier wird die Frage angezeigt.</div>
-            <div id="answers"></div>
-        </main>
-
-        <!-- Rechte Sidebar -->
-        <aside class="sidebar">
-            <h2>Kontakt</h2>
-            <p>Hier sind meine Kontaktdaten.</p>
-        </aside>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2024 Mein Portfolio</p>
-    </footer>
-
-    <!-- Overlay für das Endergebnis -->
-    <div id="overlay" class="overlay hidden">
-        <div class="overlay-content">
-            <h2>Ergebnisse</h2>
-            <p id="result-message"></p>
-            <button id="close-overlay">Schließen</button>
+    <!-- Hero-Bereich -->
+    <section id="hero">
+        <div class="info">
+            <h1>Hi, I am<br><span>Daniel Jacobs</span></h1>
+            <p class="job-title">Business Analyst</p>
+            <div class="social-icons">
+                <a href="#"><img src="email-icon.png" alt="Email"></a>
+                <a href="#"><img src="github-icon.png" alt="GitHub"></a>
+                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+            </div>
+            <button id="swipeButton" class="swipe-button">Swipe for Fun-Mode</button>
         </div>
-    </div>
+        <div class="profile-image">
+            <img src="daniel-jacobs.png" alt="Daniel Jacobs">
+        </div>
+    </section>
 
-    <!-- JavaScript Datei einbinden -->
     <script src="script.js"></script>
 </body>
 </html>
