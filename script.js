@@ -44,9 +44,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const maxScroll = document.body.scrollHeight - window.innerHeight;
         const scrollPercentage = Math.min(scrollTop / maxScroll, 1);
 
-        const gradientStart = Math.min(40 + scrollPercentage * 60, 100);
+        const gradientStart = Math.max(40 - scrollPercentage * 40, 0); // Schwarzer Bereich wächst nach unten
 
-        // Hintergrund mit dynamischem Verlauf, je nach Modus
+        // Hintergrund mit umgekehrtem Verlauf, je nach Modus
         const gradientColors = funMode
             ? `linear-gradient(75deg, #ffce00 ${gradientStart}%, #ff4081 ${gradientStart}%)`
             : `linear-gradient(75deg, #ddd ${gradientStart}%, #000 ${gradientStart}%)`;
