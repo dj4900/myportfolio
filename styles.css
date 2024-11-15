@@ -7,23 +7,39 @@
 }
 
 body {
-    background: linear-gradient(75deg, #ddd 40%, #000 40%);
+    background: linear-gradient(90deg, #ddd 40%, #000 40%);
     background-attachment: fixed;
     background-size: cover;
-    color: #333;
-    height: 200vh; /* Simuliert eine längere Seite */
+    color: #fff;
+    height: 200vh;
 }
 
+
+/* Navigation */
 nav {
     display: flex;
-    justify-content: flex-end;
-    padding: 30px;
+    justify-content: flex-start; /* Positioniert die Navigation links */
+    align-items: center;
+    padding: 10px 20px;
     background-color: #000;
+    position: fixed; /* Fixiert den Header */
+    top: 0;
+    left: 0; /* Links ausrichten */
+    width: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Hinzufügen eines Transition-Effekts */
+}
+
+/* Verstecke Navigation */
+nav.hidden {
+    transform: translateY(-100%); /* Schiebt die Navigation nach oben aus dem Sichtfeld */
 }
 
 nav ul {
     list-style: none;
     display: flex;
+    margin: 0;
+    padding: 0;
 }
 
 nav ul li {
@@ -40,7 +56,7 @@ nav ul li a {
     padding: 8px 16px;
     border: 2px solid #fff;
     border-radius: 20px;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s ease;
 }
 
 .contact-button:hover {
@@ -48,32 +64,37 @@ nav ul li a {
     transform: scale(1.05);
 }
 
+
 /* Hero-Bereich */
 #hero {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+    flex-wrap: wrap; /* Ermöglicht das Umbrechen */
     padding: 50px;
     min-height: 100vh;
     position: relative;
 }
 
 .info {
-    width: 50%;
+    width: 50%; /* Halbe Breite */
+    text-align: left; /* Text bleibt linksbündig */
     padding-right: 20px;
+    padding-top: 5%; /* Abstand nach oben in Prozent hinzufügen */
 }
 
 .info h1 {
     font-size: 2.5em;
+    color: #FD6F00; /* Farbe für "Hi I AM" */
 }
 
 .info h1 span {
     font-weight: bold;
-    color: #000;
+    color: #FD6F00; /* Farbe für den Namen */
 }
 
 .job-title {
-    color: #999;
+    color: #000;
     font-size: 1.2em;
 }
 
@@ -100,13 +121,60 @@ nav ul li a {
     transform: scale(1.05);
 }
 
+/* Profilbild */
 .profile-image {
-    width: 50%;
+    width: auto;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end; /* Positioniert das Bild rechts im Container */
+    align-items: center;
+    position: absolute;
+    right: 1cm; /* Abstand vom rechten Rand */
+    top: 30%; /* Zentriert das Bild vertikal */
+    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+    margin-bottom: 20px; /* Abstand zum nächsten Element */
 }
 
 .profile-image img {
-    width: 80%;
+    max-width: 250px; /* Maximale Breite des Bildes */
+    height: auto;
     border-radius: 10px;
+}
+
+@media (max-width: 768px) {
+    .profile-image {
+        right: 1cm; /* Beibehaltung des Abstands auf kleineren Bildschirmen */
+        top: 30%;
+        transform: translateY(-50%);
+    }
+
+    #hero {
+        flex-direction: column; /* Stellt sicher, dass sich das Layout auf kleinen Bildschirmen stapelt */
+    }
+
+    .info {
+        width: 100%; /* Volle Breite auf kleinen Bildschirmen */
+    }
+}
+
+/* About Me Section */
+#about-me {
+    width: 40%; /* Gleiche Breite wie das Bild */
+    background-color: #000; /* Gleiche Farbe wie der Hintergrund */
+    padding: 10px;
+    position: absolute; /* Absolut positioniert, um unabhängig von anderen Elementen zu sein */
+    right: 1cm; /* Abstand vom rechten Rand */
+    top: 80%; /* Position unterhalb des Profilbilds */
+    transform: translateY(-50%); /* Korrigiert die vertikale Zentrierung */
+}
+
+#about-me h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #FD6F00; /* Farbe Orange wie bereits im Code an anderen Orten */
+}
+
+#about-me p {
+    font-size: 1em;
+    line-height: 1.5;
+    color: #ccc; /* Hellgrauer Text für Kontrast */
 }
