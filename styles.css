@@ -56,6 +56,7 @@ nav ul li a {
     padding: 50px;
     min-height: 100vh;
     position: relative;
+    z-index: 2;
 }
 
 .info {
@@ -109,4 +110,15 @@ nav ul li a {
 .profile-image img {
     width: 80%;
     border-radius: 10px;
+}
+
+/* Partikel-Container */
+#particles-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 40vw; /* Schwarzer Abschnitt */
+    height: 100vh;
+    pointer-events: none;
+    z-index: 1; /* Hinter den anderen Inhalten */
 }

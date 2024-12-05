@@ -28,29 +28,48 @@ document.addEventListener("DOMContentLoaded", () => {
             : "<img src='daniel-jacobs.png' alt='Daniel Jacobs' style='width: 80%; border-radius: 10px;'>";
     };
 
+    const updateParticles = (isFunMode) => {
+        const particlesConfig = {
+            particles: {
+                number: {
+                    value: 50,
+                    density: {
+                        enable: true,
+                        value_area: 400, // Partikel nur im schwarzen Bereich
+                    },
+                },
+                color: { value: isFunMode ? "#ff4081" : "#ffffff" }, // Farben ändern
+                shape: { type: "circle" },
+                opacity: { value: 0.5 },
+                size: { value: 3 },
+                move: {
+                    enable: true,
+                    speed: 1,
+                },
+            },
+            interactivity: {
+                events: {
+                    onHover: { enable: true, mode: "repulse" },
+                    onClick: { enable: true, mode: "push" },
+                },
+            },
+        };
+
+        // Lade neue Partikel-Konfiguration
+        tsParticles.load("particles-container", particlesConfig);
+    };
+
     const toggleFunMode = () => {
         funMode = !funMode;
         updateHeroSection(funMode);
         updateProfileImage(funMode);
+        updateParticles(funMode);
     };
 
     if (selectors.swipeButton) {
         selectors.swipeButton.addEventListener("click", toggleFunMode);
     }
 
-    // Scroll-Event für den dynamischen Hintergrundverlauf
-    window.addEventListener("scroll", () => {
-        const scrollTop = window.scrollY;
-        const maxScroll = document.body.scrollHeight - window.innerHeight;
-        const scrollPercentage = Math.min(scrollTop / maxScroll, 1);
-
-        const gradientStart = Math.max(40 - scrollPercentage * 40, 0); // Schwarzer Bereich wächst nach unten
-
-        // Hintergrund mit umgekehrtem Verlauf, je nach Modus
-        const gradientColors = funMode
-            ? `linear-gradient(75deg, #ffce00 ${gradientStart}%, #ff4081 ${gradientStart}%)`
-            : `linear-gradient(75deg, #ddd ${gradientStart}%, #000 ${gradientStart}%)`;
-
-        selectors.body.style.background = gradientColors;
-    });
+    // Initialisiere Partikel
+    updateParticles(funMode);
 });
