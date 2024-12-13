@@ -30,53 +30,49 @@ section {
     text-align: center;
 }
 
-/* Hero Section */
+footer {
+    background: black;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+/* Swiper Styles */
 .swiper-background {
-    width: 390px;
-    height: 75px;
-    border-radius: 190px;
     position: relative;
-    overflow: hidden;
-    margin-top: 30px;
-    background: #c9c9c9;
+    width: 100%;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .swiper-opacity {
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 0;
-    width: 0;
-    background: black;
-    border-radius: 150px;
-    z-index: 1;
+    background-color: rgba(0, 123, 255, 0.5);
+    border-radius: 25px;
+    transition: width 0.3s ease;
 }
 
 .swiper {
-    width: 67px;
-    height: 67px;
-    border-radius: 230px;
     position: absolute;
     left: 9px;
-    z-index: 2;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: black;
+    user-select: none;
 }
 
 .swiper-icon {
-    width: 50%;
-    height: auto;
-    user-select: none;
-    pointer-events: none;
+    width: 30px;
+    height: 30px;
 }
 
 .swiper-text {
     margin-top: 10px;
-    font-size: 18px;
-    color: black;
+    font-size: 14px;
+    color: #555;
 }
 
 /* Skills Section */
@@ -128,6 +124,12 @@ section {
     padding: 2em;
     background: #fff;
     text-align: center;
+}
+
+.curriculum-section h2 {
+    font-size: 2em;
+    margin-bottom: 1em;
+    color: #333;
 }
 
 .cv-container {
@@ -186,10 +188,59 @@ section {
     line-height: 1.5em;
 }
 
-/* Footer */
-footer {
-    background: black;
-    color: white;
-    padding: 1em;
+/* Contact Section */
+.contact-section {
+    padding: 2em;
+    background: #f9f9f9;
     text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2em;
+    margin-bottom: 0.5em;
+    color: #333;
+}
+
+.contact-section p {
+    font-size: 1.1em;
+    margin-bottom: 1.5em;
+    color: #555;
+}
+
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 0.8em;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #fd6f00;
+}
+
+.contact-form .btn-submit {
+    background: #fd6f00;
+    color: white;
+    padding: 0.8em;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-form .btn-submit:hover {
+    background: #e85c00;
 }

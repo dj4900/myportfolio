@@ -63,3 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
     cvItems.forEach(item => observer.observe(item));
 });
+
+// Contact Form Submission
+document.addEventListener("DOMContentLoaded", () => {
+    const contactForm = document.querySelector(".contact-form");
+
+    contactForm.addEventListener("submit", (event) => {
+        event.preventDefault(); // Verhindert das Standardformularverhalten
+
+        const email = document.getElementById("email").value;
+        const message = document.getElementById("message").value;
+
+        if (email && message) {
+            alert(`Thank you for your message!\n\nEmail: ${email}\nMessage: ${message}`);
+            contactForm.reset(); // Formular zurücksetzen
+        } else {
+            alert("Please fill out all fields.");
+        }
+    });
+});
