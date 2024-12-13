@@ -73,3 +73,47 @@ footer {
     font-size: 14px;
     color: #555;
 }
+
+/* Skills Section */
+.skills-section {
+    padding: 2em;
+    background: #f4f4f4;
+    text-align: center;
+}
+
+.skills-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5em;
+}
+
+.skill {
+    width: 80%;
+    max-width: 700px;
+}
+
+.skill-name {
+    font-size: 1.2em;
+    margin-bottom: 0.5em;
+    text-align: left;
+    color: #333;
+    font-weight: bold;
+}
+
+.skills-meter {
+    width: 100%;
+    height: 10px;
+    background: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+}
+
+.skills-meter-handle {
+    display: block;
+    height: 100%;
+    background: #fd6f00;
+    border-radius: 5px 0 0 5px;
+    transition: width 0.3s ease;
+}
