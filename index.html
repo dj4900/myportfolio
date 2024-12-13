@@ -1,41 +1,64 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dynamic Hero Background</title>
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
-    <nav>
-        <ul>
-            <li><a href="#">About me</a></li>
-            <li><a href="#">Skills</a></li>
-            <li><a href="#">Portfolio</a></li>
-            <li><a href="#" class="contact-button">Contact Me</a></li>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <ul id="navbar">
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#curriculum">Curriculum Vitae</a></li>
+            <li><a href="#contact" class="current">Contact Me</a></li>
         </ul>
     </nav>
 
+    <!-- Hero Section -->
     <section id="hero">
-        <div class="info">
-            <h1>Hi, I am<br><span id="name-span">Daniel Jacobs</span></h1>
-            <p class="job-title">Business Analyst</p>
-            <div class="social-icons">
-                <a href="#"><img src="email-icon.png" alt="Email"></a>
-                <a href="#"><img src="github-icon.png" alt="GitHub"></a>
-                <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
-            </div>
-            <button id="fun-mode-button" class="swipe-button" onclick="location.href='funmode.html'">Activate Fun-Mode</button>
-        </div>
-        <div id="profile-image-container" class="profile-image">
-            <img src="daniel-jacobs.png" alt="Daniel Jacobs">
-        </div>
+        <h1>Welcome to My Portfolio</h1>
+        <p>Explore my work and skills.</p>
     </section>
 
-    <div id="particles-container"></div>
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Short description about yourself.</p>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Skills Section -->
+    <section id="skills">
+        <h2>Skills</h2>
+        <ul>
+            <li>Skill 1</li>
+            <li>Skill 2</li>
+            <li>Skill 3</li>
+        </ul>
+    </section>
+
+    <!-- Curriculum Vitae Section -->
+    <section id="curriculum">
+        <h2>Curriculum Vitae</h2>
+        <p>Details about your work experience and education.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <form>
+            <input type="email" placeholder="Enter Your Email">
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script src="script/script-index.js"></script>
 </body>
 </html>
