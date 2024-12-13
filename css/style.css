@@ -1,41 +1,36 @@
-/* General Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    line-height: 1.6;
 }
 
-/* Navbar */
 .navbar {
-    background-color: black;
+    background: black;
     color: white;
     padding: 1em;
     display: flex;
     justify-content: center;
 }
+
 .navbar ul {
     list-style: none;
     display: flex;
     gap: 1em;
 }
+
 .navbar ul li a {
     color: white;
     text-decoration: none;
 }
-.navbar ul li a.current {
-    color: orange;
-}
 
-/* Sections */
 section {
     padding: 2em;
     text-align: center;
 }
 
-/* Footer */
 footer {
-    background-color: black;
+    background: black;
     color: white;
     text-align: center;
     padding: 1em 0;
