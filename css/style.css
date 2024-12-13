@@ -35,3 +35,41 @@ footer {
     text-align: center;
     padding: 1em 0;
 }
+
+/* Swiper Styles */
+.swiper-background {
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 25px;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swiper-opacity {
+    position: absolute;
+    background-color: rgba(0, 123, 255, 0.5);
+    border-radius: 25px;
+    transition: width 0.3s ease;
+}
+
+.swiper {
+    position: absolute;
+    left: 9px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.swiper-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.swiper-text {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #555;
+}
