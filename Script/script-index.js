@@ -40,30 +40,34 @@ document.addEventListener("mouseup", () => {
     const buttonRect = sliderButton.getBoundingClientRect();
 
     if (buttonRect.right >= containerRect.right - 15) {
-        alert("Swiper action completed!"); // Temporär: Fun-Mode später einfügen
+        window.location = "funmode.html";
     }
 
     sliderOpacity.style.width = "0";
+    sliderOpacity.style.height = "0";
+    sliderButton.style.left = "10px";
 });
 
 // Highlight aktiver Bereich
 document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll("#navbar a, #mobileNavbar a");
+    const navLinks = document.querySelectorAll(".navbar ul li a, #mobileNavbar a");
 
-    const updateActiveLink = () => {
+    const highlightNav = () => {
         const scrollPos = window.scrollY + 50;
 
         sections.forEach((section) => {
             if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-                navLinks.forEach((link) => link.classList.remove("active", "current-mobile"));
-                document.querySelector(`a[href="#${section.id}"]`).classList.add(window.innerWidth > 1000 ? "active" : "current-mobile");
+                navLinks.forEach((link) => link.classList.remove("current", "current-mobile"));
+                document
+                    .querySelector(`a[href="#${section.id}"]`)
+                    .classList.add(window.innerWidth > 1000 ? "current" : "current-mobile");
             }
         });
     };
 
-    window.addEventListener("scroll", updateActiveLink);
-    updateActiveLink();
+    window.addEventListener("scroll", highlightNav);
+    highlightNav(); // Initialer Aufruf
 });
 
 // Curriculum Vitae Animation on Scroll
@@ -122,22 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Scroll-Animation
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-in, .about-section");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in-visible");
-            }
-        });
-    });
-
-    elements.forEach((el) => observer.observe(el));
-});
-
-// Skills Meter Animation on Scroll
+// Scroll-Animation für Skills
 document.addEventListener("DOMContentLoaded", () => {
     const skillsMeters = document.querySelectorAll(".skills-meter");
 
@@ -145,6 +134,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const progress = entry.target.getAttribute("data-progress");
+                entry.target.style.setProperty("--progress", `${progress}%`);
                 entry.target.querySelector("::before").style.width = `${progress}%`;
             }
         });

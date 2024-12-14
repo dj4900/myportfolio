@@ -1,17 +1,33 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.6;
+    background-color: #f9f9f9;
 }
 
+section {
+    padding: 2em 20px;
+    text-align: center;
+}
+
+h1, h2, h3, p {
+    margin: 0;
+}
+
+/* Navigation */
 .navbar {
     background: black;
     color: white;
     padding: 1em;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 10;
     display: flex;
     justify-content: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .navbar ul {
@@ -23,75 +39,91 @@ body {
 .navbar ul li a {
     color: white;
     text-decoration: none;
-}
-
-/* Desktop Navigation */
-.navbar ul li a:hover {
-    color: #fd6f00;
-    border-bottom: 2px solid #fd6f00;
+    padding: 0.5em 1em;
+    border-radius: 5px;
     transition: all 0.3s ease;
 }
 
-section {
-    padding: 2em;
-    text-align: center;
+.navbar ul li a:hover,
+.navbar ul li a.current {
+    background-color: #fd6f00;
+    color: white;
+    border-radius: 20px;
 }
 
-footer {
+/* Mobile Navigation */
+.mobile-nav img {
+    width: 50px;
+    height: 45px;
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    z-index: 999;
+    cursor: pointer;
+    border: 2px solid #fd6f00;
+    border-radius: 10px;
+    background-color: black;
+    transition: transform 0.3s ease;
+}
+
+.mobile-nav img:hover {
+    transform: scale(1.1);
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
     background: black;
     color: white;
-    padding: 1em;
-    text-align: center;
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: right 0.5s ease;
 }
 
-/* Aktive Links */
-.navbar-inner li a.active,
-#mobileNavbar a.current-mobile {
-    font-weight: bold;
-    border-bottom: 2px solid #fd6f00;
+.menu.open {
+    right: 0;
 }
 
-/* About Me Section */
-.about-section {
+.menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
     width: 100%;
-    padding: 50px 20px;
-    background-color: #f9f9f9;
     text-align: center;
 }
 
-.about-section-inner {
-    max-width: 800px;
-    margin: 0 auto;
+.menu ul li {
+    margin: 1em 0;
 }
 
-.about-heading {
-    font-family: "Poppins", sans-serif;
-    font-size: 2.5em;
-    font-weight: 600;
-    color: #333;
-    margin-bottom: 20px;
+.menu ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5em;
+    transition: color 0.3s ease;
 }
 
-.about-para {
-    font-size: 1.2em;
-    line-height: 1.8;
-    color: #555;
-    font-style: italic;
-    border-left: 4px solid #fd6f00;
-    padding-left: 15px;
-    margin-left: 20px;
+.menu ul li a:hover {
+    color: #fd6f00;
 }
 
-/* Scroll-Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+#close-icon {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    filter: invert(1);
+    transition: transform 0.3s ease;
 }
 
-.fade-in-visible {
-    opacity: 1;
-    transform: translateY(0);
+#close-icon:hover {
+    transform: rotate(90deg);
 }
 
 /* Hero Section */
@@ -99,8 +131,8 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-top: 80px; /* Navigation Offset */
     padding: 2em;
-    background-color: #f9f9f9;
 }
 
 .hero-left {
@@ -145,13 +177,11 @@ footer {
     height: 60%;
 }
 
-/* Hover-Effekte für Social Icons */
 .icon-container:hover {
     transform: scale(1.1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Right Section */
 .hero-right {
     width: 50%;
     text-align: center;
@@ -230,11 +260,34 @@ footer {
     height: 30px;
 }
 
-.swiper-text {
-    font-size: 1em;
-    color: #333;
+/* About Me Section */
+.about-section {
+    width: 100%;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
     text-align: center;
-    margin-top: 1em;
+}
+
+.about-section-inner {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about-heading {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.about-para {
+    font-size: 1.2em;
+    line-height: 1.8;
+    color: #555;
+    font-style: italic;
+    border-left: 4px solid #fd6f00;
+    padding-left: 15px;
+    margin-left: 20px;
 }
 
 /* Skills Section */
@@ -245,7 +298,6 @@ footer {
 }
 
 .skills-heading {
-    font-family: "Poppins", sans-serif;
     font-size: 2.5em;
     font-weight: 600;
     color: #333;
@@ -316,224 +368,16 @@ footer {
     width: 85%;
 }
 
-/* Curriculum Vitae Section */
-.curriculum-section {
-    padding: 2em;
-    background: #fff;
-    text-align: center;
-}
-
-.curriculum-section h2 {
-    font-size: 2em;
-    margin-bottom: 1em;
-    color: #333;
-}
-
-.cv-container {
-    display: flex;
-    flex-direction: column;
-    gap: 2em;
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.cv-item {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1em;
-    border-bottom: 1px solid #ddd;
-    padding-bottom: 1em;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.cv-item.fade-in {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.cv-left {
-    flex: 1 1 40%;
-    text-align: left;
-    color: #555;
-}
-
-.cv-left h3 {
-    font-size: 1.2em;
-    margin-bottom: 0.5em;
-    color: #000;
-}
-
-.cv-left p {
-    margin: 0.2em 0;
-}
-
-.cv-date {
-    font-size: 0.9em;
-    color: #999;
-}
-
-.cv-right {
-    flex: 1 1 60%;
-    text-align: left;
-    color: #333;
-}
-
-.cv-right p {
-    margin: 0;
-    line-height: 1.5em;
-}
-
-/* Contact Section */
-.contact-section {
-    padding: 2em;
-    background: #f9f9f9;
-    text-align: center;
-}
-
-.contact-section h2 {
-    font-size: 2em;
-    margin-bottom: 0.5em;
-    color: #333;
-}
-
-.contact-section p {
-    font-size: 1.1em;
-    margin-bottom: 1.5em;
-    color: #555;
-}
-
-.contact-form {
-    max-width: 600px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    gap: 1em;
-}
-
-.contact-form input,
-.contact-form textarea {
-    width: 100%;
-    padding: 0.8em;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1em;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-    outline: none;
-    border-color: #fd6f00;
-}
-
-.contact-form .btn-submit {
-    background: #fd6f00;
-    color: white;
-    padding: 0.8em;
-    border: none;
-    border-radius: 5px;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-}
-
-.contact-form .btn-submit:hover {
-    background: #e85c00;
-}
-
-.contact-form .btn-submit::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: #e85c00;
-    z-index: -1;
-    transition: left 0.3s ease;
-}
-
-.contact-form .btn-submit:hover::before {
-    left: 0;
-}
-
-/* Mobile Navigation */
-.mobile-nav img {
-    width: 50px;
-    height: 45px;
-    position: fixed;
-    right: 20px;
-    top: 20px;
-    z-index: 999;
-    cursor: pointer;
-    border: 2px solid #fd6f00;
-    border-radius: 10px;
-    background-color: black;
-    transition: transform 0.3s ease;
-}
-
-.mobile-nav img:hover {
-    transform: scale(1.1);
-}
-
-.menu {
-    position: fixed;
-    top: 0;
-    right: -100%;
-    background: black;
-    color: white;
-    width: 70%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    transition: right 0.5s ease;
-    z-index: 1000;
-}
-
-.menu.open {
-    right: 0;
-}
-
-.menu ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-    text-align: center;
-}
-
-.menu ul li {
-    margin: 1em 0;
-}
-
-.menu ul li a {
-    color: white;
-    text-decoration: none;
-    font-size: 1.5em;
-    transition: color 0.3s ease;
-}
-
-.menu ul li a:hover {
-    color: #fd6f00;
-}
-
-#close-icon {
-    width: 30px;
-    height: 30px;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    cursor: pointer;
-    filter: invert(1);
-    transition: transform 0.3s ease;
-}
-
-#close-icon:hover {
-    transform: rotate(90deg);
+/* Responsive Design */
+@media (max-width: 1000px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-heading {
+        text-align: center;
+    }
+    .hero-left, .hero-right {
+        width: 100%;
+    }
 }

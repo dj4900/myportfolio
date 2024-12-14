@@ -7,13 +7,13 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Bestehende Navigation -->
+    <!-- Navigation -->
     <nav class="navbar">
         <ul id="navbar">
-            <li><a href="#about" class="active">About Me</a></li>
+            <li><a href="#about">About Me</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#curriculum">Curriculum Vitae</a></li>
-            <li><a href="#contact">Contact Me</a></li>
+            <li><a href="#contact" class="current">Contact Me</a></li>
         </ul>
     </nav>
 
@@ -33,6 +33,62 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section">
+        <div class="hero-left">
+            <h1 class="hero-heading">Hi, I am Daniel Jacobs</h1>
+            <p class="hero-occupation">Business Analyst</p>
+            <div class="icon-row">
+                <span class="icon-container">
+                    <a href="mailto:example@example.com">
+                        <img src="assets/images/@icon.png" alt="Email Icon">
+                    </a>
+                </span>
+                <span class="icon-container">
+                    <a href="https://github.com">
+                        <img src="assets/images/github.png" alt="GitHub Icon">
+                    </a>
+                </span>
+                <span class="icon-container">
+                    <a href="https://linkedin.com">
+                        <img src="assets/images/linkedin-black.png" alt="LinkedIn Icon">
+                    </a>
+                </span>
+            </div>
+
+            <!-- Swiper for Fun-Mode -->
+            <div id="swiperBackground" class="swiper-background">
+                <div id="swiperOpacity" class="swiper-opacity"></div>
+                <span id="swiper" class="swiper">
+                    <img src="assets/images/right-arrow.png" alt="right-arrow" class="swiper-icon" draggable="false" />
+                </span>
+                <p class="swiper-text">Swipe for Fun-Mode</p>
+            </div>
+        </div>
+        <div class="hero-right">
+            <div class="image-container">
+                <div class="image-background-gradient">
+                    <div class="image-background">
+                        <div class="person-image-cover">
+                            <img src="assets/images/person.png" alt="Person Image" class="person-image">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section">
+        <div class="about-section-inner">
+            <h2 class="about-heading">About Me</h2>
+            <p class="about-para">
+                "There is always a solution!" <br />
+                I am a dedicated problem solver who views challenges as opportunities
+                to develop creative solutions. My analytical mindset and communicative
+                approach help me work effectively in teams. With my experience and
+                education, I am confident in handling even the toughest challenges
+                with composure.
+            </p>
+        </div>
     </section>
 
     <!-- Skills Section -->
@@ -69,59 +125,6 @@
             </div>
         </div>
     </section>
-
-    <!-- Curriculum Vitae Section -->
-    <section id="curriculum" class="curriculum-section">
-        <h2>Curriculum Vitae</h2>
-        <div class="cv-container">
-            <div class="cv-item">
-                <div class="cv-left">
-                    <h3>Junior Business Analyst</h3>
-                    <p>GS1 Switzerland</p>
-                    <p class="cv-date">Sep 2023 - Present</p>
-                </div>
-                <div class="cv-right">
-                    <p>Working with the Product Owner to define requirements, create mockups, and coordinate stakeholder input. Involved in testing to ensure quality and successful delivery.</p>
-                </div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-left">
-                    <h3>Product Manager</h3>
-                    <p>Heiniger Unternehmensberatung AG</p>
-                    <p class="cv-date">Jan 2020 - Jul 2023</p>
-                </div>
-                <div class="cv-right">
-                    <p>Led IT tenders, co-managed mobile device management projects, and collaborated with the marketing team on campaigns.</p>
-                </div>
-            </div>
-            <div class="cv-item">
-                <div class="cv-left">
-                    <h3>Project Assistant</h3>
-                    <p>Pro Velo Switzerland</p>
-                    <p class="cv-date">Jan 2019 - Dec 2019</p>
-                </div>
-                <div class="cv-right">
-                    <p>Supported projects and campaigns to promote cycling in Switzerland during my civil service.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact-section">
-        <h2>Contact Me</h2>
-        <p>Let's collaborate! Contact me for new opportunities or projects.</p>
-        <form class="contact-form">
-            <input type="email" id="email" name="email" placeholder="Enter Your Email" required>
-            <textarea id="message" name="message" placeholder="Enter Your Message" rows="4" required></textarea>
-            <button type="submit" class="btn-submit">Submit</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 Your Name. All rights reserved.</p>
-    </footer>
 
     <script src="script/script-index.js"></script>
 </body>
