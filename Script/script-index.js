@@ -40,12 +40,10 @@ document.addEventListener("mouseup", () => {
     const buttonRect = sliderButton.getBoundingClientRect();
 
     if (buttonRect.right >= containerRect.right - 15) {
-        window.location = "funmode.html";
+        alert("Swiper action completed!"); // Temporär: Fun-Mode später einfügen
     }
 
     sliderOpacity.style.width = "0";
-    sliderOpacity.style.height = "0";
-    sliderButton.style.left = "10px";
 });
 
 // Highlight aktiver Bereich
@@ -126,7 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // Scroll-Animation
 document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-in, .skills-meter");
+    const elements = document.querySelectorAll(".fade-in, .about-section");
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
