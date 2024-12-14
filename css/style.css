@@ -25,6 +25,13 @@ body {
     text-decoration: none;
 }
 
+/* Desktop Navigation */
+.navbar ul li a:hover {
+    color: #fd6f00;
+    border-bottom: 2px solid #fd6f00;
+    transition: all 0.3s ease;
+}
+
 section {
     padding: 2em;
     text-align: center;
@@ -35,6 +42,13 @@ footer {
     color: white;
     padding: 1em;
     text-align: center;
+}
+
+/* Aktive Links */
+.navbar-inner li a.active,
+#mobileNavbar a.current-mobile {
+    font-weight: bold;
+    border-bottom: 2px solid #fd6f00;
 }
 
 /* About Me Section */
@@ -66,6 +80,18 @@ footer {
     border-left: 4px solid #fd6f00;
     padding-left: 15px;
     margin-left: 20px;
+}
+
+/* Scroll-Animation */
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* Hero Section */
@@ -193,7 +219,10 @@ footer {
     align-items: center;
     justify-content: center;
     cursor: pointer;
-    z-index: 1;
+}
+
+.swiper:hover {
+    background: #fd6f00;
 }
 
 .swiper-icon {
@@ -395,10 +424,29 @@ footer {
     font-size: 1em;
     cursor: pointer;
     transition: background 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
 }
 
 .contact-form .btn-submit:hover {
     background: #e85c00;
+}
+
+.contact-form .btn-submit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #e85c00;
+    z-index: -1;
+    transition: left 0.3s ease;
+}
+
+.contact-form .btn-submit:hover::before {
+    left: 0;
 }
 
 /* Mobile Navigation */
@@ -476,16 +524,4 @@ footer {
 
 #close-icon:hover {
     transform: rotate(90deg);
-}
-
-/* Scroll-Animation */
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-}
-
-.fade-in-visible {
-    opacity: 1;
-    transform: translateY(0);
 }

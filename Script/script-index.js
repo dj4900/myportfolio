@@ -48,6 +48,26 @@ document.addEventListener("mouseup", () => {
     sliderButton.style.left = "10px";
 });
 
+// Highlight aktiver Bereich
+document.addEventListener("DOMContentLoaded", () => {
+    const sections = document.querySelectorAll("section");
+    const navLinks = document.querySelectorAll("#navbar a, #mobileNavbar a");
+
+    const updateActiveLink = () => {
+        const scrollPos = window.scrollY + 50;
+
+        sections.forEach((section) => {
+            if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
+                navLinks.forEach((link) => link.classList.remove("active", "current-mobile"));
+                document.querySelector(`a[href="#${section.id}"]`).classList.add(window.innerWidth > 1000 ? "active" : "current-mobile");
+            }
+        });
+    };
+
+    window.addEventListener("scroll", updateActiveLink);
+    updateActiveLink();
+});
+
 // Curriculum Vitae Animation on Scroll
 document.addEventListener("DOMContentLoaded", () => {
     const cvItems = document.querySelectorAll(".cv-item");
