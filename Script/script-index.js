@@ -1,4 +1,4 @@
-// Swiper Code
+// Swiper Functionality
 const sliderContainer = document.getElementById("swiperBackground");
 const sliderButton = document.getElementById("swiper");
 const sliderOpacity = document.getElementById("swiperOpacity");
@@ -11,12 +11,11 @@ sliderButton.addEventListener("mousedown", (e) => {
     startX = e.clientX;
 
     const containerRect = sliderContainer.getBoundingClientRect();
-    const initialWidth = Math.max(9, e.clientX - containerRect.left);
+    const initialWidth = Math.max(10, e.clientX - containerRect.left);
 
     sliderOpacity.style.width = `${initialWidth}px`;
     sliderOpacity.style.height = `${sliderButton.offsetHeight}px`;
-    sliderOpacity.style.top = `${sliderButton.offsetTop}px`;
-    sliderOpacity.style.left = "9px";
+    sliderOpacity.style.left = "10px";
 });
 
 document.addEventListener("mousemove", (e) => {
@@ -25,11 +24,11 @@ document.addEventListener("mousemove", (e) => {
     const containerRect = sliderContainer.getBoundingClientRect();
     let newWidth = e.clientX - containerRect.left;
 
-    newWidth = Math.max(9, Math.min(newWidth, containerRect.width - 30));
+    newWidth = Math.max(10, Math.min(newWidth, containerRect.width - 20));
     sliderOpacity.style.width = `${newWidth}px`;
 
-    let buttonLeft = e.clientX - startX + 9;
-    buttonLeft = Math.max(9, Math.min(buttonLeft, containerRect.width - sliderButton.offsetWidth - 9));
+    let buttonLeft = e.clientX - startX + 10;
+    buttonLeft = Math.max(10, Math.min(buttonLeft, containerRect.width - sliderButton.offsetWidth - 10));
     sliderButton.style.left = `${buttonLeft}px`;
 });
 
@@ -46,7 +45,7 @@ document.addEventListener("mouseup", () => {
 
     sliderOpacity.style.width = "0";
     sliderOpacity.style.height = "0";
-    sliderButton.style.left = "9px";
+    sliderButton.style.left = "10px";
 });
 
 // Curriculum Vitae Animation on Scroll
@@ -79,6 +78,28 @@ document.addEventListener("DOMContentLoaded", () => {
             contactForm.reset(); // Formular zurücksetzen
         } else {
             alert("Please fill out all fields.");
+        }
+    });
+});
+
+// Mobile Navigation Toggle
+document.addEventListener("DOMContentLoaded", () => {
+    const menuIcon = document.getElementById("menu-icon");
+    const menu = document.getElementById("menu");
+    const closeIcon = document.getElementById("close-icon");
+
+    menuIcon.addEventListener("click", () => {
+        menu.classList.add("open");
+    });
+
+    closeIcon.addEventListener("click", () => {
+        menu.classList.remove("open");
+    });
+
+    // Schließt das Menü, wenn außerhalb geklickt wird
+    document.addEventListener("click", (event) => {
+        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+            menu.classList.remove("open");
         }
     });
 });

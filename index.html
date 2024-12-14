@@ -17,11 +17,25 @@
         </ul>
     </nav>
 
+    <!-- Mobile Navigation -->
+    <div class="mobile-nav">
+        <img id="menu-icon" src="assets/images/menu-icon.png" alt="menu icon" />
+        <nav class="menu" id="menu">
+            <ul id="mobileNavbar">
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#curriculum">Curriculum Vitae</a></li>
+                <li><a class="current-mobile" href="#contact">Contact Me</a></li>
+            </ul>
+            <img id="close-icon" class="close-icon" src="assets/images/close.png" alt="close icon" />
+        </nav>
+    </div>
+
     <!-- Hero Section -->
-    <section id="hero">
+    <section id="hero" class="hero-section">
         <div class="hero-left">
-            <h1>Hi, I am Daniel Jacobs</h1>
-            <p class="occupation">Business Analyst</p>
+            <h1 class="hero-heading">Hi, I am Daniel Jacobs</h1>
+            <p class="hero-occupation">Business Analyst</p>
             <div class="icon-row">
                 <span class="icon-container">
                     <a href="mailto:example@example.com">
@@ -40,7 +54,7 @@
                 </span>
             </div>
 
-            <!-- Swiper -->
+            <!-- Swiper for Fun-Mode -->
             <div id="swiperBackground" class="swiper-background">
                 <div id="swiperOpacity" class="swiper-opacity"></div>
                 <span id="swiper" class="swiper">
@@ -51,7 +65,13 @@
         </div>
         <div class="hero-right">
             <div class="image-container">
-                <img src="assets/images/person.png" alt="Your Image">
+                <div class="image-background-gradient">
+                    <div class="image-background">
+                        <div class="person-image-cover">
+                            <img src="assets/images/person.png" alt="Person Image" class="person-image">
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
