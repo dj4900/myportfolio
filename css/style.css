@@ -239,29 +239,37 @@ footer {
 
 /* Skills Section */
 .skills-section {
-    padding: 2em;
+    padding: 50px 20px;
     background: #f4f4f4;
     text-align: center;
+}
+
+.skills-heading {
+    font-family: "Poppins", sans-serif;
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
 }
 
 .skills-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
     gap: 1.5em;
+    align-items: center;
 }
 
 .skill {
     width: 80%;
     max-width: 700px;
+    text-align: left;
 }
 
 .skill-name {
     font-size: 1.2em;
     margin-bottom: 0.5em;
-    text-align: left;
-    color: #333;
     font-weight: bold;
+    color: #333;
 }
 
 .skills-meter {
@@ -269,29 +277,21 @@ footer {
     height: 10px;
     background: #ddd;
     border-radius: 5px;
-    overflow: hidden;
     position: relative;
+    overflow: hidden;
 }
 
-.skills-meter-handle {
-    display: block;
-    height: 100%;
-    background: #fd6f00;
-    border-radius: 5px 0 0 5px;
-    transition: width 0.3s ease;
-}
-
-/* Fortschrittsbalken Animation */
 .skills-meter::before {
     content: "";
     display: block;
     height: 100%;
     background-color: #fd6f00;
-    border-radius: 6px 0 0 6px;
     width: 0; /* Startwert */
+    border-radius: 5px 0 0 5px;
     transition: width 1.5s ease;
 }
 
+/* Fortschrittsbreiten */
 .skills-meter[data-progress="90"]::before {
     width: 90%;
 }
@@ -302,6 +302,18 @@ footer {
 
 .skills-meter[data-progress="70"]::before {
     width: 70%;
+}
+
+.skills-meter[data-progress="50"]::before {
+    width: 50%;
+}
+
+.skills-meter[data-progress="95"]::before {
+    width: 95%;
+}
+
+.skills-meter[data-progress="85"]::before {
+    width: 85%;
 }
 
 /* Curriculum Vitae Section */
