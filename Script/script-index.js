@@ -136,3 +136,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     elements.forEach((el) => observer.observe(el));
 });
+
+// Skills Meter Animation on Scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const skillsMeters = document.querySelectorAll(".skills-meter");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const progress = entry.target.getAttribute("data-progress");
+                entry.target.querySelector("::before").style.width = `${progress}%`;
+            }
+        });
+    });
+
+    skillsMeters.forEach((meter) => observer.observe(meter));
+});
