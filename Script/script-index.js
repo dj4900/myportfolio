@@ -63,14 +63,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const cvItems = document.querySelectorAll(".cv-item");
 
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("fade-in");
             }
         });
     }, { threshold: 0.2 });
 
-    cvItems.forEach(item => observer.observe(item));
+    cvItems.forEach((item) => observer.observe(item));
 });
 
 // Contact Form Submission
@@ -80,14 +80,14 @@ document.addEventListener("DOMContentLoaded", () => {
     contactForm.addEventListener("submit", (event) => {
         event.preventDefault(); // Verhindert das Standardformularverhalten
 
-        const email = document.getElementById("email").value;
-        const message = document.getElementById("message").value;
+        const email = document.getElementById("email").value.trim();
+        const message = document.getElementById("message").value.trim();
 
         if (email && message) {
-            alert(`Thank you for your message!\n\nEmail: ${email}\nMessage: ${message}`);
+            alert(`Thank you for reaching out!\n\nEmail: ${email}\nMessage: ${message}`);
             contactForm.reset(); // Formular zurücksetzen
         } else {
-            alert("Please fill out all fields.");
+            alert("Please fill out all required fields.");
         }
     });
 });
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// Scroll-Animation für Skills
+// Skills Meter Animation on Scroll
 document.addEventListener("DOMContentLoaded", () => {
     const skillsMeters = document.querySelectorAll(".skills-meter");
 
@@ -122,7 +122,6 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 const progress = entry.target.getAttribute("data-progress");
-                entry.target.style.setProperty("--progress", `${progress}%`);
                 entry.target.querySelector("::before").style.width = `${progress}%`;
             }
         });
