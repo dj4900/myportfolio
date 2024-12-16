@@ -611,34 +611,41 @@
 /* footer start */
 
 .footer-link {
-  padding-top: 130px;
-  width: 350px;
-  margin: auto;
+    padding-top: 130px;
+    width: 350px;
+    margin: auto;
+    text-align: center;
 }
 
 .footer-link li {
-  list-style-type: none;
+    list-style-type: none;
+    margin-bottom: 10px;
 }
 
 .footer-link li a {
-  text-decoration: none;
-  color: white;
-  font-weight: 700;
-  font-size: 16px;
+    text-decoration: none;
+    color: white;
+    font-weight: 700;
+    font-size: 16px;
 }
 
 .footer-icon {
-  margin-top: 40px;
-  padding-bottom: 100px;
+    margin-top: 40px;
+    padding-bottom: 100px;
+    text-align: center;
+}
+
+.footer-icon a {
+    display: inline-block;
+    margin-right: 25px;
 }
 
 .footer-icon a img {
-  width: 32px;
-  height: 32px;
-  margin-right: 25px;
+    width: 32px;
+    height: 32px;
 }
 
-/* footer end  */
+/* footer end */
 
 /* responsive start */
 
@@ -830,23 +837,62 @@
 
   /* collaborate section end  */
 
-  /* footer start */
+  /* Footer Container */
+footer {
+    background-color: black; /* Hintergrundfarbe */
+    color: white; /* Textfarbe */
+    padding: 50px 20px; /* Innenabstand für den Footer */
+    text-align: center; /* Zentriert den Text */
+}
 
-  .footer-link {
-    padding-top: 120px;
-    width: 400px;
-  }
+/* Footer Navigation Links */
+.footer-link {
+    display: flex; /* Flexbox Layout */
+    justify-content: center; /* Zentriert horizontal */
+    gap: 30px; /* Abstand zwischen den Links */
+    list-style: none; /* Entfernt Aufzählungszeichen */
+    margin-bottom: 20px; /* Abstand nach unten */
+    padding: 0; /* Kein zusätzlicher Padding */
+}
 
-  .footer-link li a {
-    font-size: 14px;
-  }
+.footer-link li a {
+    color: white; /* Textfarbe */
+    text-decoration: none; /* Entfernt Unterstreichung */
+    font-size: 16px; /* Schriftgröße */
+    font-weight: 600; /* Schriftgewicht */
+    transition: color 0.3s ease; /* Sanfter Hover-Effekt */
+}
 
-  .footer-icon a img {
-    width: 28px;
-    height: 28px;
-  }
+.footer-link li a:hover {
+    color: #fd6f00; /* Farbe beim Hover */
+}
 
-  /* footer end */
+/* Footer Social Icons */
+.footer-icons {
+    display: flex; /* Flexbox Layout */
+    justify-content: center; /* Zentriert horizontal */
+    align-items: center; /* Zentriert vertikal */
+    gap: 20px; /* Abstand zwischen den Icons */
+    margin-bottom: 20px; /* Abstand nach unten */
+}
+
+.footer-icons a img {
+    width: 40px; /* Größe der Icons */
+    height: 40px;
+    transition: transform 0.3s ease; /* Hover-Effekt */
+}
+
+.footer-icons a img:hover {
+    transform: scale(1.1); /* Vergrößert das Icon beim Hover */
+}
+
+/* Footer Copyright Text */
+.footer-text {
+    font-size: 14px; /* Schriftgröße */
+    font-weight: 400; /* Normales Schriftgewicht */
+    margin-top: 10px; /* Abstand nach oben */
+}
+
 }
 
 @media (max-width: 1000px) {
