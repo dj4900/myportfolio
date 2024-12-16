@@ -368,6 +368,77 @@ h1, h2, h3, p {
     width: 85%;
 }
 
+/* Curriculum Vitae Section */
+.curriculum-section {
+    padding: 50px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.curriculum-heading {
+    font-size: 2.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.cv-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.cv-item {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 20px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.cv-item.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.cv-left {
+    flex: 1 1 40%;
+    text-align: left;
+    color: #555;
+}
+
+.cv-left h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #000;
+}
+
+.cv-left p {
+    margin: 5px 0;
+}
+
+.cv-date {
+    font-size: 0.9em;
+    color: #999;
+}
+
+.cv-right {
+    flex: 1 1 60%;
+    text-align: left;
+    color: #333;
+}
+
+.cv-right p {
+    margin: 0;
+    line-height: 1.5em;
+    font-size: 1em;
+}
+
 /* Responsive Design */
 @media (max-width: 1000px) {
     .hero-section {

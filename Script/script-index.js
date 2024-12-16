@@ -33,19 +33,7 @@ document.addEventListener("mousemove", (e) => {
 });
 
 document.addEventListener("mouseup", () => {
-    if (!isDragging) return;
     isDragging = false;
-
-    const containerRect = sliderContainer.getBoundingClientRect();
-    const buttonRect = sliderButton.getBoundingClientRect();
-
-    if (buttonRect.right >= containerRect.right - 15) {
-        window.location = "funmode.html";
-    }
-
-    sliderOpacity.style.width = "0";
-    sliderOpacity.style.height = "0";
-    sliderButton.style.left = "10px";
 });
 
 // Highlight aktiver Bereich
