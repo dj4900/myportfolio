@@ -1,4 +1,5 @@
-// Swiper Functionality
+// swiper code start
+
 const sliderContainer = document.getElementById("swiperBackground");
 const sliderButton = document.getElementById("swiper");
 const sliderOpacity = document.getElementById("swiperOpacity");
@@ -7,158 +8,160 @@ let isDragging = false;
 let startX;
 
 sliderButton.addEventListener("mousedown", (e) => {
-    isDragging = true;
-    startX = e.clientX;
+  isDragging = true;
+  startX = e.clientX;
 
-    const containerRect = sliderContainer.getBoundingClientRect();
-    const initialWidth = Math.max(10, e.clientX - containerRect.left);
+  const containerRect = sliderContainer.getBoundingClientRect();
 
-    sliderOpacity.style.width = `${initialWidth}px`;
-    sliderOpacity.style.height = `${sliderButton.offsetHeight}px`;
-    sliderOpacity.style.left = "10px";
+  sliderOpacity.style.height = `${sliderButton.offsetHeight}px`;
+  sliderOpacity.style.top = `${sliderButton.offsetTop}px`;
+
+  const initialWidth = Math.max(9, e.clientX - containerRect.left);
+  sliderOpacity.style.width = `${initialWidth}px`;
+  sliderOpacity.style.left = "9px";
 });
 
 document.addEventListener("mousemove", (e) => {
-    if (!isDragging) return;
+  if (!isDragging) return;
 
-    const containerRect = sliderContainer.getBoundingClientRect();
-    let newWidth = e.clientX - containerRect.left;
+  const containerRect = sliderContainer.getBoundingClientRect();
+  let newWidth = e.clientX - containerRect.left;
 
-    newWidth = Math.max(10, Math.min(newWidth, containerRect.width - 20));
-    sliderOpacity.style.width = `${newWidth}px`;
+  newWidth = Math.max(9, Math.min(newWidth, containerRect.width - 30));
+  sliderOpacity.style.width = `${newWidth}px`;
 
-    let buttonLeft = e.clientX - startX + 10;
-    buttonLeft = Math.max(10, Math.min(buttonLeft, containerRect.width - sliderButton.offsetWidth - 10));
-    sliderButton.style.left = `${buttonLeft}px`;
+  let buttonLeft = e.clientX - startX + 9;
+  buttonLeft = Math.max(
+    9,
+    Math.min(buttonLeft, containerRect.width - sliderButton.offsetWidth - 9)
+  );
+  sliderButton.style.left = `${buttonLeft}px`;
 });
 
 document.addEventListener("mouseup", () => {
-    isDragging = false;
+  if (!isDragging) return;
+  isDragging = false;
+
+  const containerRect = sliderContainer.getBoundingClientRect();
+  const buttonRect = sliderButton.getBoundingClientRect();
+
+  if (buttonRect.right >= containerRect.right - 15) {
+    window.location = "funmode.html";
+  }
+
+  sliderOpacity.style.width = "0";
+  sliderOpacity.style.height = "0";
+  sliderButton.style.left = "9px";
 });
 
-// Highlight aktiver Bereich
-document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section");
-    const navLinks = document.querySelectorAll(".navbar ul li a, #mobileNavbar a");
+sliderButton.addEventListener("touchstart", (e) => {
+  isDragging = true;
+  startX = e.touches[0].clientX;
 
-    const highlightNav = () => {
-        const scrollPos = window.scrollY + 50;
+  const containerRect = sliderContainer.getBoundingClientRect();
 
-        sections.forEach((section) => {
-            if (scrollPos >= section.offsetTop && scrollPos < section.offsetTop + section.offsetHeight) {
-                navLinks.forEach((link) => link.classList.remove("current", "current-mobile"));
-                document
-                    .querySelector(`a[href="#${section.id}"]`)
-                    .classList.add(window.innerWidth > 1000 ? "current" : "current-mobile");
-            }
-        });
-    };
+  sliderOpacity.style.height = `${sliderButton.offsetHeight}px`;
+  sliderOpacity.style.top = `${sliderButton.offsetTop}px`;
 
-    window.addEventListener("scroll", highlightNav);
-    highlightNav(); // Initialer Aufruf
+  const initialWidth = Math.max(9, e.touches[0].clientX - containerRect.left);
+  sliderOpacity.style.width = `${initialWidth}px`;
+  sliderOpacity.style.left = "9px";
 });
 
-// Curriculum Vitae Animation on Scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const cvItems = document.querySelectorAll(".cv-item");
+document.addEventListener("touchmove", (e) => {
+  if (!isDragging) return;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in-visible");
-                observer.unobserve(entry.target); // Stop observing once the animation is triggered
-            }
-        });
-    }, { threshold: 0.2 });
+  const containerRect = sliderContainer.getBoundingClientRect();
+  let newWidth = e.touches[0].clientX - containerRect.left;
 
-    cvItems.forEach((item) => observer.observe(item));
+  newWidth = Math.max(9, Math.min(newWidth, containerRect.width - 30));
+  sliderOpacity.style.width = `${newWidth}px`;
+
+  let buttonLeft = e.touches[0].clientX - startX + 9;
+  buttonLeft = Math.max(
+    9,
+    Math.min(buttonLeft, containerRect.width - sliderButton.offsetWidth - 9)
+  );
+  sliderButton.style.left = `${buttonLeft}px`;
 });
 
-// Skills Meter Animation on Scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const skillsMeters = document.querySelectorAll(".skills-meter");
+document.addEventListener("touchend", () => {
+  if (!isDragging) return;
+  isDragging = false;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const progress = entry.target.getAttribute("data-progress");
-                entry.target.querySelector("::before").style.width = `${progress}%`;
-            }
-        });
+  const containerRect = sliderContainer.getBoundingClientRect();
+  const buttonRect = sliderButton.getBoundingClientRect();
+
+  if (buttonRect.right >= containerRect.right - 9) {
+    window.location = "funmode.html";
+  }
+
+  sliderOpacity.style.width = "0";
+  sliderOpacity.style.height = "0";
+  sliderButton.style.left = "9px";
+});
+
+// swiper code end
+
+// humburger code start
+
+document.addEventListener("DOMContentLoaded", () => {
+  const menuIcon = document.getElementById("menu-icon");
+  const menu = document.getElementById("menu");
+  const closeIcon = document.getElementById("close-icon");
+
+  menuIcon.addEventListener("click", () => {
+    menu.classList.toggle("open");
+    menuIcon.classList.toggle("active");
+  });
+
+  closeIcon.addEventListener("click", () => {
+    menu.classList.remove("open");
+    menuIcon.classList.remove("active");
+  });
+
+  document.addEventListener("click", (event) => {
+    if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
+      menu.classList.remove("open");
+      menuIcon.classList.remove("active");
+    }
+  });
+});
+
+// humburger code end
+
+// navbar start
+
+document.addEventListener("DOMContentLoaded", () => {
+  const navbarLinks = document.querySelectorAll("#navbar a");
+
+  navbarLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      // Remove 'current' class from all links
+      navbarLinks.forEach((link) => link.classList.remove("current"));
+
+      // Add 'current' class to the clicked link
+      event.target.classList.add("current");
     });
-
-    skillsMeters.forEach((meter) => observer.observe(meter));
+  });
 });
 
-// Contact Form Submission
+// navbar end
+
+// mobile navbar start
+
 document.addEventListener("DOMContentLoaded", () => {
-    const contactForm = document.querySelector(".contact-form");
+  const navbarLinks = document.querySelectorAll("#mobileNavbar a");
 
-    contactForm.addEventListener("submit", (event) => {
-        event.preventDefault(); // Verhindert das Standardformularverhalten
+  navbarLinks.forEach((link) => {
+    link.addEventListener("click", (event) => {
+      // Remove 'current' class from all links
+      navbarLinks.forEach((link) => link.classList.remove("current-mobile"));
 
-        const email = document.getElementById("email").value.trim();
-        const message = document.getElementById("message").value.trim();
-
-        if (email && message) {
-            alert(`Thank you for reaching out!\n\nEmail: ${email}\nMessage: ${message}`);
-            contactForm.reset(); // Formular zurücksetzen
-        } else {
-            alert("Please fill out all required fields.");
-        }
+      // Add 'current' class to the clicked link
+      event.target.classList.add("current-mobile");
     });
+  });
 });
 
-// Mobile Navigation Toggle
-document.addEventListener("DOMContentLoaded", () => {
-    const menuIcon = document.getElementById("menu-icon");
-    const menu = document.getElementById("menu");
-    const closeIcon = document.getElementById("close-icon");
-
-    menuIcon.addEventListener("click", () => {
-        menu.classList.add("open");
-    });
-
-    closeIcon.addEventListener("click", () => {
-        menu.classList.remove("open");
-    });
-
-    // Schließt das Menü, wenn außerhalb geklickt wird
-    document.addEventListener("click", (event) => {
-        if (!menu.contains(event.target) && !menuIcon.contains(event.target)) {
-            menu.classList.remove("open");
-        }
-    });
-});
-
-// Scroll-Animation für Elemente
-document.addEventListener("DOMContentLoaded", () => {
-    const elements = document.querySelectorAll(".fade-in");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in-visible");
-                observer.unobserve(entry.target); // Stop observing once the animation is triggered
-            }
-        });
-    }, { threshold: 0.1 });
-
-    elements.forEach((el) => observer.observe(el));
-});
-
-// Hero Section Animation on Scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const heroElements = document.querySelectorAll(".hero-heading, .hero-occupation, .icon-row, .hero-right");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in-visible");
-                observer.unobserve(entry.target); // Stop observing once the animation is triggered
-            }
-        });
-    }, { threshold: 0.2 });
-
-    heroElements.forEach((element) => observer.observe(element));
-});
+// mobile navbar end

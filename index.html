@@ -1,138 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Daniel Jacobs Portfolio</title>
     <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <ul id="navbar">
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#curriculum">Curriculum Vitae</a></li>
-            <li><a href="#contact" class="current">Contact Me</a></li>
-        </ul>
+  </head>
+  <body>
+    <!-- navbar start -->
+    <nav class="navbar bg-black">
+      <ul id="navbar" class="flex navbar-inner around">
+        <li>
+          <a href="#about">About me</a>
+        </li>
+        <li>
+          <a href="#skills">Skills</a>
+        </li>
+        <li>
+          <a href="#curicculum">Curriculum Vitae</a>
+        </li>
+        <li>
+          <a class="current" href="#collaborate">Contact me</a>
+        </li>
+      </ul>
     </nav>
+    <!-- navbar end -->
 
-    <!-- Mobile Navigation -->
+    <!-- mobile nav start  -->
+
     <div class="mobile-nav">
-        <img id="menu-icon" src="assets/images/menu-icon.png" alt="menu icon" />
-        <nav class="menu" id="menu">
-            <ul id="mobileNavbar">
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#curriculum">Curriculum Vitae</a></li>
-                <li><a class="current-mobile" href="#contact">Contact Me</a></li>
-            </ul>
-            <img id="close-icon" class="close-icon" src="assets/images/close.png" alt="close icon" />
-        </nav>
+      <img id="menu-icon" src="assets/images/menu-icon.png" alt="menu icon" />
+      <nav class="menu" id="menu">
+        <ul id="mobileNavbar">
+          <li><a href="#about">About me</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#curicculum">Curicculum Vitae</a></li>
+          <li><a class="current-mobile" href="#collaborate">Contact me</a></li>
+        </ul>
+        <img
+          id="close-icon"
+          class="close-icon"
+          src="assets/images/close.png"
+          alt="close icon"
+        />
+      </nav>
     </div>
 
-    <!-- Hero Section (Feinabstimmung) -->
-    <section id="hero" class="hero-section">
-        <div class="hero-left">
-            <h1 class="hero-heading fade-in">Hi, I am Daniel Jacobs</h1>
-            <p class="hero-occupation fade-in">Business Analyst</p>
-            <div class="icon-row fade-in">
-                <span class="icon-container">
-                    <a href="mailto:example@example.com">
-                        <img src="assets/images/@icon.png" alt="Email Icon">
-                    </a>
-                </span>
-                <span class="icon-container">
-                    <a href="https://github.com">
-                        <img src="assets/images/github.png" alt="GitHub Icon">
-                    </a>
-                </span>
-                <span class="icon-container">
-                    <a href="https://linkedin.com">
-                        <img src="assets/images/linkedin-black.png" alt="LinkedIn Icon">
-                    </a>
-                </span>
-            </div>
-            <div id="swiperBackground" class="swiper-background">
-                <div id="swiperOpacity" class="swiper-opacity"></div>
-                <span id="swiper" class="swiper">
-                    <img src="assets/images/right-arrow.png" alt="right-arrow" class="swiper-icon" draggable="false" />
-                </span>
-                <p class="swiper-text">Swipe for Fun-Mode</p>
-            </div>
-        </div>
-        <div class="hero-right fade-in">
-            <div class="image-container">
-                <div class="image-background-gradient">
-                    <div class="image-background">
-                        <div class="person-image-cover">
-                            <img src="assets/images/person.png" alt="Person Image" class="person-image">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <!-- mobile nav end  -->
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills-section">
-        <h2 class="skills-heading">Skills</h2>
-        <div class="skills-container">
-            <div class="skill">
-                <p class="skill-name">Business Analysis</p>
-                <div class="skills-meter" data-progress="90"></div>
-            </div>
-            <div class="skill">
-                <p class="skill-name">Project Management</p>
-                <div class="skills-meter" data-progress="80"></div>
-            </div>
-            <div class="skill">
-                <p class="skill-name">UX Design / Prototyping</p>
-                <div class="skills-meter" data-progress="70"></div>
-            </div>
-            <div class="skill">
-                <p class="skill-name">Web Development (HTML, CSS, JS)</p>
-                <div class="skills-meter" data-progress="50"></div>
-            </div>
-            <div class="skill">
-                <p class="skill-name">Testing & Quality Assurance</p>
-                <div class="skills-meter" data-progress="95"></div>
-            </div>
-            <div class="skill">
-                <p class="skill-name">Collaboration Tools (Jira, Confluence)</p>
-                <div class="skills-meter" data-progress="85"></div>
-            </div>
-            <div class="skill">
-                <p class="skill-name">Microsoft 365 (M365)</p>
-                <div class="skills-meter" data-progress="90"></div>
-            </div>
+    <!-- hero section start -->
+    <section id="hero" class="bg-grey-50 hero-mobile">
+      <!-- left side start  -->
+      <div class="left-hero bg-grey-50 flex flex-col start">
+        <h4 class="intro">Hi, I am</h4>
+        <h1 class="name">Daniel Jacobs</h1>
+        <p class="occupation text-grey-100">Business Analyst</p>
+        <div class="icon-row flex">
+          <span class="icon-container bg-grey-100 flex"
+            ><a href="mailto:@example.com">
+              <img src="assets/images/@icon.png" alt="@ icon" /></a
+          ></span>
+          <span class="icon-container bg-grey-100 flex">
+            <a href=""
+              ><img src="assets/images/github.png" alt="github icon" /></a
+          ></span>
+          <span class="icon-container bg-grey-100 flex"
+            ><a href=""
+              ><img
+                src="assets/images/linkedin-black.png"
+                alt="linkedin icon" /></a
+          ></span>
         </div>
+        <div id="swiperBackground" class="swiper-background flex">
+          <div id="swiperOpacity" class="swiper-opacity bg-black"></div>
+          <span id="swiper" class="swiper flex bg-black">
+            <img
+              class="swiper-icon"
+              src="assets/images/right-arrow.png"
+              alt="right-arrow"
+              draggable="false"
+            />
+          </span>
+          <p class="swiper-text text-white">Swipe for Fun-Mode</p>
+        </div>
+      </div>
+      <!-- left side end -->
+      <!-- right side start -->
+      <div class="bg-black right-hero-cover">
+        <div class="right-hero bg-black flex">
+          <div class="image-background-gradient">
+            <div class="bg-white image-background">
+              <div class="person-image-cover">
+                <img
+                  class="person-image"
+                  src="assets/images/person.png"
+                  alt="person image"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
+    <!-- hero section end -->
+    <!-- about section start -->
+    <section class="bg-black about-section">
+      <div class="text-white about-section-inner">
+        <h2 class="about-heading" id="about">About Me</h2>
+        <p class="about-para">
+          "There is always a solution!" <br />
+          I am a dedicated problem solver who views challenges as opportunities
+          to develop creative solutions. My analytical mindset and communicative
+          approach help me work effectively in teams. With my experience and
+          education, I am confident in handling even the toughest challenges
+          with composure.
+        </p>
+      </div>
+    </section>
+    <!-- about section end  -->
+    <!-- skills section start  -->
 
-    <!-- Footer Section -->
-    <footer class="footer">
-        <ul class="footer-links">
-            <li><a href="#hero">Home</a></li>
-            <li><a href="#about">About Me</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#curriculum">Curriculum Vitae</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-        <div class="footer-icons">
-            <a href="https://facebook.com" target="_blank">
-                <img src="assets/images/facebook.png" alt="Facebook Icon">
-            </a>
-            <a href="https://twitter.com" target="_blank">
-                <img src="assets/images/twitter.png" alt="Twitter Icon">
-            </a>
-            <a href="https://instagram.com" target="_blank">
-                <img src="assets/images/instagram.png" alt="Instagram Icon">
-            </a>
-            <a href="https://linkedin.com" target="_blank">
-                <img src="assets/images/linkedin.png" alt="LinkedIn Icon">
-            </a>
+    <section class="bg-black skills-section">
+      <h2 id="skills" class="skills-heading text-white">Skills</h2>
+      <div class="flex skills-section-inner">
+        <div class="w-50 skills-container">
+          <p class="skills-name text-white">Business Analysis</p>
+          <div class="skills-meter bg-white">
+            <span class="skills-meter-handle"></span>
+          </div>
+          <p class="skills-name text-white">Project Management</p>
+          <div class="skills-meter management bg-white">
+            <span class="skills-meter-handle management-handle"></span>
+          </div>
+          <p class="skills-name text-white">
+            User Experience (UX) Design / Prototyping
+          </p>
+          <div class="skills-meter designer bg-white">
+            <span class="skills-meter-handle designer-handle"></span>
+          </div>
+          <p class="skills-name text-white">
+            Web Development (HTML, CSS, JavaScript)
+          </p>
+          <div class="skills-meter bg-white development">
+            <span class="skills-meter-handle development-handle"></span>
+          </div>
+          <p class="skills-name text-white">Testing & Quality Assurance</p>
+          <div class="skills-meter bg-white quality">
+            <span class="skills-meter-handle quality-handle"></span>
+          </div>
+          <p class="skills-name text-white">
+            Collaboration Tools (Jira, Confluence, Atlassian)
+          </p>
+          <div class="skills-meter bg-white collaboration">
+            <span class="skills-meter-handle collaboration-handle"></span>
+          </div>
+          <p class="skills-name text-white">Microsoft 365 (M365)</p>
+          <div class="skills-meter bg-white M365">
+            <span class="skills-meter-handle M365-handle"></span>
+          </div>
         </div>
-        <p class="footer-text">© 2024 Daniel Jacobs. All rights reserved.</p>
+        <span class="w-50 flex skill-image"
+          ><img src="assets/images/rocket.png" alt="rocket image"
+        /></span>
+      </div>
+    </section>
+    <!-- skills section end  -->
+    <!-- curriculum section start  -->
+    <section class="bg-black flex text-white flex-col">
+      <h2 id="curicculum" class="curicculum-heading">Curriculum Vitae</h2>
+      <div class="flex curicculum-inner between start">
+        <div class="w-40">
+          <h6 class="location">GS1 Switzerland</h6>
+          <p class="date">Sep 2023 - Today</p>
+        </div>
+        <span class="w-20 flex flex-col">
+          <span class="divider bg-white flex">
+            <span class="divider-inner bg-orange"></span>
+          </span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+        </span>
+        <div class="w-40 curicculum-right">
+          <h6 class="work">Junior Business Analyst</h6>
+          <p class="work-about">
+            Working with the Product Owner to develop a new platform.
+            Responsibilities include defining requirements, creating mockups,
+            and coordinating stakeholder input. Also involved in testing to
+            ensure quality and successful delivery.
+          </p>
+        </div>
+      </div>
+      <div class="flex curicculum-inner between start">
+        <div class="w-40">
+          <h6 class="location">
+            Heiniger <br />
+            Unternehmensberatung AG
+          </h6>
+          <p class="date">Jan 2020 - July 2023</p>
+        </div>
+        <span class="w-20 flex flex-col">
+          <span class="divider bg-white flex">
+            <span class="divider-inner bg-orange"></span>
+          </span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+        </span>
+        <div class="w-40 curicculum-right">
+          <h6 class="work">Product Manager <br />Apple Business Manager</h6>
+          <p class="work-about">
+            In this role, I lead public and private IT tenders, particularly in
+            the Education and B2B sectors. I am responsible for strategic
+            purchasing, co-managing mobile device management projects, and
+            planning marketing campaigns together with the marketing team.
+          </p>
+        </div>
+      </div>
+      <div class="flex curicculum-inner between start">
+        <div class="w-40">
+          <h6 class="location">Pro Velo Switzerland <br />(Civil Service)</h6>
+          <p class="date">Jan 2019 - Dez 2019</p>
+        </div>
+        <span class="w-20 flex flex-col">
+          <span class="divider bg-white flex">
+            <span class="divider-inner bg-orange"></span>
+          </span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+        </span>
+        <div class="w-40 curicculum-right">
+          <h6 class="work">Project Assistant</h6>
+          <p class="work-about">
+            During my civil service at Pro Velo Switzerland, I supported several
+            projects and campaigns aimed at promoting cycling across the
+            country.
+          </p>
+        </div>
+      </div>
+      <div class="flex curicculum-inner between start">
+        <!-- mobile design start  -->
+
+        <ol class="timeline-list">
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">GS1 Switzerland</h4>
+
+            <span>Sep 2023 - Today</span>
+
+            <h4 class="h4 timeline-item-title second">
+              Junior Business Analyst
+            </h4>
+
+            <p class="timeline-text">
+              Working with the Product Owner to develop a new platform.
+              Responsibilities include defining requirements, creating mockups,
+              and coordinating stakeholder input. Also involved in testing to
+              ensure quality and successful delivery.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">
+              Heiniger Unternehmensberatung AG
+            </h4>
+
+            <span>Jan 2020 - July 2023</span>
+
+            <h4 class="h4 timeline-item-title second">
+              Product Manager Apple Business Manager
+            </h4>
+            <p class="timeline-text">
+              In this role, I lead public and private IT tenders, particularly
+              in the Education and B2B sectors. I am responsible for strategic
+              purchasing, co-managing mobile device management projects, and
+              planning marketing campaigns together with the marketing team.
+            </p>
+          </li>
+
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">
+              Pro Velo Switzerland (Civil Service)
+            </h4>
+
+            <span>Jan 2019 - Dez 2019</span>
+            <h4 class="h4 timeline-item-title second">Project Assistant</h4>
+
+            <p class="timeline-text">
+              During my civil service at Pro Velo Switzerland, I supported
+              several projects and campaigns aimed at promoting cycling across
+              the country.
+            </p>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">
+              Sep 2016- July 2020
+            </h4>
+
+            <span>Sep 2016- July 2020</span>
+            <h4 class="h4 timeline-item-title second">Office Orderly, Air Force</h4>
+
+            <p class="timeline-text">
+              I worked as an Office Orderly, where I managed and organized military documents and assisted in maintaining operational workflows.
+            </p>
+          </li>
+          <li class="timeline-item">
+            <h4 class="h4 timeline-item-title">
+              Die Post CH AG PostFinance AG
+            </h4>
+
+            <span>Sep 2020- July 2023</span>
+            <h4 class="h4 timeline-item-title second">Trainee Business Administrator</h4>
+
+            <p class="timeline-text">
+              My career started with a three-year apprenticeship in business administration, which provided me with essential skills in various business functions at Die Post and PostFinance AG.
+            </p>
+          </li>
+        </ol>
+
+        <!-- mobile design end  -->
+
+        <div class="w-40">
+          <h6 class="location">Swiss Military</h6>
+          <p class="date">Sep 2016- July 2020</p>
+        </div>
+        <span class="w-20 flex flex-col">
+          <span class="divider bg-white flex">
+            <span class="divider-inner bg-orange"></span>
+          </span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+          <span class="divider-line"></span>
+        </span>
+        <div class="w-40 curicculum-right">
+          <h6 class="work">Office Orderly, Air Force</h6>
+          <p class="work-about">
+            I worked as an Office Orderly, where I managed and organized
+            military documents and assisted in maintaining operational
+            workflows.
+          </p>
+        </div>
+      </div>
+      <div class="flex curicculum-inner between start">
+        <div class="w-40">
+          <h6 class="location">
+            Die Post CH AG <br />
+            PostFinance AG
+          </h6>
+          <p class="date">Sep 2020- July 2023</p>
+        </div>
+        <span class="w-20 flex flex-col">
+          <span class="divider bg-white flex">
+            <span class="divider-inner bg-orange"></span>
+          </span>
+        </span>
+        <div class="w-40 curicculum-right">
+          <h6 class="work">Trainee Business Administrator</h6>
+          <p class="work-about">
+            My career started with a three-year apprenticeship in business
+            administration, which provided me with essential skills in various
+            business functions at Die Post and PostFinance AG.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- curricculum section end  -->
+    <!-- collaborate section start  -->
+    <section id="collaborate" class="flex flex-col bg-black text-white">
+      <h2 class="collaborate-heading">Lets Collaborate!</h2>
+      <p class="collaborate-para">
+        Contact me for new challenges, interesting job offers or exciting
+        collaboration projects. Let’s get in touch!
+      </p>
+      <form class="flex form">
+        <input class="input" type="email" placeholder="Enter Your Email" />
+        <input class="btn" type="submit" value="Contact Me" />
+      </form>
+      <!-- collaborate section end  -->
+    </section>
+    <!-- footer start  -->
+    <footer class="bg-black">
+      <ul class="footer-link between text-white flex">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About Me</a></li>
+        <li><a href="#curicculum">Curicculum Vitae</a></li>
+      </ul>
+      <div class="footer-icon flex">
+        <a href=""
+          ><img src="assets/images/facebook.png" alt="facebook image"
+        /></a>
+        <a href=""
+          ><img src="assets/images/twitter.png" alt="twitter image"
+        /></a>
+        <a href=""
+          ><img src="assets/images/instagram.png" alt="instagram image"
+        /></a>
+        <a href=""
+          ><img src="assets/images/linkedin.png" alt="linkedin image"
+        /></a>
+      </div>
+      <!-- footer end -->
     </footer>
-</body>
+    <script src="https://unpkg.com/sv443-joke-api@0.0.8/web/index.js"></script>
+    <script src="script/script-index.js"></script>
+   
+  </body>
 </html>
