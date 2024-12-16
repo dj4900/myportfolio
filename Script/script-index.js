@@ -74,6 +74,22 @@ document.addEventListener("DOMContentLoaded", () => {
     cvItems.forEach((item) => observer.observe(item));
 });
 
+// Skills Meter Animation on Scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const skillsMeters = document.querySelectorAll(".skills-meter");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                const progress = entry.target.getAttribute("data-progress");
+                entry.target.querySelector("::before").style.width = `${progress}%`;
+            }
+        });
+    });
+
+    skillsMeters.forEach((meter) => observer.observe(meter));
+});
+
 // Contact Form Submission
 document.addEventListener("DOMContentLoaded", () => {
     const contactForm = document.querySelector(".contact-form");
@@ -113,23 +129,6 @@ document.addEventListener("DOMContentLoaded", () => {
             menu.classList.remove("open");
         }
     });
-});
-
-// Skills Meter Animation on Scroll
-document.addEventListener("DOMContentLoaded", () => {
-    const skillsMeters = document.querySelectorAll(".skills-meter");
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                const progress = entry.target.getAttribute("data-progress");
-                entry.target.querySelector("::before").style.width = `${progress}%`;
-                observer.unobserve(entry.target); // Stop observing once the animation is triggered
-            }
-        });
-    });
-
-    skillsMeters.forEach((meter) => observer.observe(meter));
 });
 
 // Scroll-Animation für Elemente
