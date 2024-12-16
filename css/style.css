@@ -126,7 +126,7 @@ h1, h2, h3, p {
     transform: rotate(90deg);
 }
 
-/* Hero Section */
+/* Hero Section (Responsivität optimiert) */
 .hero-section {
     display: flex;
     flex-wrap: wrap;
@@ -292,7 +292,7 @@ h1, h2, h3, p {
     margin-left: 20px;
 }
 
-/* Skills Section */
+/* Skills Section Optimierungen */
 .skills-section {
     text-align: center;
     padding: 50px 20px;
@@ -325,6 +325,7 @@ h1, h2, h3, p {
     color: #333;
 }
 
+/* For Progress Animation */
 .skills-meter {
     position: relative;
     height: 10px;

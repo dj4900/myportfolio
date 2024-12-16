@@ -66,6 +66,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("fade-in-visible");
+                observer.unobserve(entry.target); // Stop observing once the animation is triggered
             }
         });
     }, { threshold: 0.2 });
@@ -123,6 +124,7 @@ document.addEventListener("DOMContentLoaded", () => {
             if (entry.isIntersecting) {
                 const progress = entry.target.getAttribute("data-progress");
                 entry.target.querySelector("::before").style.width = `${progress}%`;
+                observer.unobserve(entry.target); // Stop observing once the animation is triggered
             }
         });
     });
@@ -138,6 +140,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("fade-in-visible");
+                observer.unobserve(entry.target); // Stop observing once the animation is triggered
             }
         });
     }, { threshold: 0.1 });
@@ -153,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
                 entry.target.classList.add("fade-in-visible");
+                observer.unobserve(entry.target); // Stop observing once the animation is triggered
             }
         });
     }, { threshold: 0.2 });
