@@ -65,7 +65,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const observer = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                entry.target.classList.add("fade-in");
+                entry.target.classList.add("fade-in-visible");
             }
         });
     }, { threshold: 0.2 });
@@ -128,4 +128,34 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     skillsMeters.forEach((meter) => observer.observe(meter));
+});
+
+// Scroll-Animation für Elemente
+document.addEventListener("DOMContentLoaded", () => {
+    const elements = document.querySelectorAll(".fade-in");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in-visible");
+            }
+        });
+    }, { threshold: 0.1 });
+
+    elements.forEach((el) => observer.observe(el));
+});
+
+// Hero Section Animation on Scroll
+document.addEventListener("DOMContentLoaded", () => {
+    const heroElements = document.querySelectorAll(".hero-heading, .hero-occupation, .icon-row, .hero-right");
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("fade-in-visible");
+            }
+        });
+    }, { threshold: 0.2 });
+
+    heroElements.forEach((element) => observer.observe(element));
 });
