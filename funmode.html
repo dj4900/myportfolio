@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daniel Jacobs | Fun Mode</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- hero section start -->
+<section id="hero" class="bg-yellow-50 hero-mobile">
+  <!-- left side start  -->
+  <div class="left-hero bg-yellow-50 flex flex-col start">
+    <h4 class="intro">Hi, I am</h4>
+    <h1 class="name">Daniel Jacobs</h1>
+    <p class="occupation text-grey-100">Just a random guy</p>
+    <div class="icon-row flex">
+          <span class="icon-container bg-grey-100 flex"
+          ><a href="mailto:daniel.jacobs@gmx.ch">
+              <img src="assets/images/@icon.png" alt="@ icon" /></a
+          ></span>
+      <span class="icon-container bg-grey-100 flex">
+            <a href="https://github.com/dj4900"
+            ><img src="assets/images/github.png" alt="github icon" /></a
+            ></span>
+      <span class="icon-container bg-grey-100 flex"
+      ><a href="https://www.linkedin.com/in/daniel-jacobs-718099214/"
+      ><img
+              src="assets/images/linkedin-black.png"
+              alt="linkedin icon" /></a
+      ></span>
+    </div>
+    <div id="swiperBackground" class="swiper-background-fun flex">
+      <div id="swiperOpacity" class="swiper-opacity bg-black"></div>
+      <span id="swiper" class="swiper flex bg-black">
+            <img
+                    class="swiper-icon"
+                    src="assets/images/right-arrow.png"
+                    alt="right-arrow"
+                    draggable="false"
+            />
+          </span>
+      <p class="swiper-text fun-swiper-text">Swipe for Business-Mode</p>
+    </div>
+  </div>
+  <!-- left side end -->
+  <!-- right side start -->
+  <div class="bg-purple right-hero-cover">
+    <div class="right-hero bg-purple flex">
+      <div class="image-background-gradient-fun">
+        <div class="bg-yellow image-background">
+          <div class="person-image-cover">
+            <img
+                    class="person-image"
+                    src="assets/images/person.png"
+                    alt="person image"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- hero section end -->
+<!-- Fun Quote section start -->
+<section class="bg-purple fun-quote">
+  <div class="text-white">
+    <p class="fun-text">
+      "Fun is the secret ingredient to a happy life."
+    </p>
+  </div>
+</section>
+<!-- Fun Quote end  -->
+
+
+<!-- APIs Section start -->
+<section class="fun-apis bg-purple">
+  <div class="apis-grid">
+    <div class="api-div" >
+      <div class="api-title">Jokes</div>
+      <div class="inner-api" id="jokes">
+        
+      </div>
+      <div class="sub-btn-sec ">
+        <button id="btn-fetch-joke">
+          <img src="assets/images/refresh.png" class="refresh-img-jokes">
+        </button>
+      </div>
+
+    </div>
+    <div class="api-div">
+       <div class="api-title">Crypto Price-Tracker</div>
+      <div class="inner-api">
+        <div class="coins-list">
+          <ul id="ul-coins">
+          
+          </ul>
+        </div>
+      </div>
+      <div class="sub-btn-sec ">
+        <button id="btn-fetch-crypto">
+          <img src="assets/images/refresh.png" class="refresh-img-crypto" alt="image">
+        </button>
+      </div>
+    </div>
+    <div class="api-div">
+      <div class="api-title">Useless Facts</div>
+      <div class="inner-api" id="useless-facts"></div>
+      <div class="sub-btn-sec ">
+        <button id="btn-fetch-facts">
+          <img src="assets/images/refresh.png" class="refresh-img-facts" alt="image">
+        </button>
+      </div>
+    </div>
+    <div class="api-div">
+      <div class="api-title">Advice</div>
+      <div class="inner-api" id="advice"></div>
+      <div class="sub-btn-sec ">
+        <button id="btn-fetch-advice">
+          <img src="assets/images/refresh.png" class="refresh-img-advice" alt="image">
+        </button>
+    </div>
+  </div>
+  </div>
+</section>
+<!-- APIs Section end -->
+
+
+
+
+<!-- collaborate section start  -->
+<section id="collaborate" class="flex flex-col bg-purple text-white">
+  <h2 class="collaborate-heading">Lets Collaborate!</h2>
+  <p class="collaborate-para">
+    Contact me for new challenges, interesting job offers or exciting
+    collaboration projects. Let’s get in touch!
+  </p>
+  <form class="flex form">
+    <input class="input" type="email" placeholder="Enter Your Email" />
+    <input class="fun-btn" type="submit" value="Contact Me" />
+  </form>
+  <!-- collaborate section end  -->
+</section>
+<!-- footer start  -->
+<footer class="bg-purple">
+  <ul class="footer-link between text-white flex">
+    <li><a href="index.html#hero">Home</a></li>
+    <li><a href="index.html#about">About Me</a></li>
+    <li><a href="index.html#curicculum">Curicculum Vitae</a></li>
+</ul>
+<div class="footer-icon flex">
+<a href="https://github.com/dj4900" target="_blank">
+  <img src="assets/images/github2.webp" alt="github image" />
+</a>
+<a href="https://www.linkedin.com/in/daniel-jacobs-718099214/" target="_blank">
+  <img src="assets/images/linkedin.png" alt="linkedin image" />
+</a>
+  </div>
+  <!-- footer end -->
+</footer>
+ <script src="https://unpkg.com/sv443-joke-api@0.0.8/web/index.js"></script>
+<script src="script/script-fun.js"></script>
+ <script type="text/javascript">
+      
+
+let jokeFetchBtn = document.querySelector('#btn-fetch-joke');
+let refreshImage = document.querySelector('.refresh-img-jokes');
+let refreshFactImage = document.querySelector('.refresh-img-facts');
+let fetchFactBtn = document.querySelector('#btn-fetch-facts');
+let fetchAdviceBtn = document.querySelector('#btn-fetch-advice');
+let refreshAdviceImg = document.querySelector('.refresh-img-advice');
+let fetchCryptoBtn = document.querySelector('#btn-fetch-crypto');
+let refreshCryptoImg = document.querySelector('.refresh-img-crypto');
+
+ fetchJokes();     
+ fetchCryptoPrices();
+ fetchUseLessFacts();
+ fetchAdvice();
+
+
+jokeFetchBtn.onclick = function(){
+  fetchJokes();
+}
+fetchFactBtn.onclick = function(){
+  fetchUseLessFacts();
+}
+fetchCryptoBtn.onclick = function(){
+  fetchCryptoPrices();
+}
+fetchAdviceBtn.onclick = function(){
+  fetchAdvice();
+}
+
+
+  function fetchJokes(){
+refreshImage.classList.add('processing-fetch');
+JokeAPI.getJokes({jokeType: "single"})
+  .then((res) => res.json())
+  .then((data) => {
+    document.querySelector('#jokes').innerHTML = `<p>${data.joke}</p>`;
+    refreshImage.classList.remove('processing-fetch');
+  })
+  }
+
+  // CG-vMV4ooiAX5mmAujzyPzP3a7g
+  function fetchCryptoPrices(){
+    refreshCryptoImg.classList.add('processing-fetch');
+    const url_crypto = 'https://api.coingecko.com/api/v3/simple/price?ids=bitcoin%2Cdogecoin%2Cpepe&vs_currencies=usd';
+const options = {
+  method: 'GET',
+  headers: {accept: 'application/json', 'x-cg-demo-api-key': 'CG-vMV4ooiAX5mmAujzyPzP3a7g'}
+};
+
+let coinsHtml = "";
+fetch(url_crypto, options)
+  .then(res => res.json())
+  .then(json => {
+    for(let coin in json){
+    coinsHtml+=`<li><span>${coin}:</span> <span>${json[coin].usd} usd</span></li>`
+    }
+    document.querySelector('#ul-coins').innerHTML = coinsHtml;
+    refreshCryptoImg.classList.remove('processing-fetch');
+  })
+  .catch(err => console.error(err));
+  }
+  
+
+function fetchUseLessFacts(){
+  refreshFactImage.classList.add('processing-fetch');
+  fetch("https://uselessfacts.jsph.pl/api/v2/facts/random")
+  .then(res => res.json())
+  .then(json => {
+  
+    document.querySelector('#useless-facts').innerHTML = `<p>${json.text}</p>`;
+    refreshFactImage.classList.remove('processing-fetch');
+  })
+  .catch(err => console.error(err));
+}
+
+
+
+function fetchAdvice(){
+
+  refreshAdviceImg.classList.add('processing-fetch');
+  const url_advice = 'https://api.adviceslip.com/advice';
+  fetch(url_advice, {
+    method: 'GET',
+  
+})
+.then(response => {
+    if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+})
+.then(data => {
+    console.log(data);
+    let advice = data.slip.advice;
+     document.querySelector('#advice').innerHTML = `<p>${advice}</p>`;
+    refreshAdviceImg.classList.remove('processing-fetch');
+})
+.catch(error => console.error('There was a problem with the fetch operation:', error));
+}
+
+
+    </script>
+  
+</body>
+</html>
